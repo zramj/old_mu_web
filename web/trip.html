@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OOBike</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="stylesheets/bootstrap.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+</head>
+<body>
+	<nav id="navMenu">
+		<ul>
+			<li><a href="about.html">關於我們</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="order.html">租借單車</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="trip.html">行程推薦</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="service.html">服務介紹</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="contact.html">聯絡我們</a></li>
+		</ul>
+	</nav>
+	<header class="header other-header">
+		<div class="navToggle-button">
+	      <div class="navToggle">
+	        <div class="icon"></div>
+	      </div>
+		</div>
+
+		<div class="logo"><a href="index.html" class="logo-img"></a></div>
+		<div class="function-area">
+			<div class="dropdown user-menu">
+			  <div id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  class="user-page-btn">
+			    <img src="images/user-img.png" alt=""><span  class="mobile-close">Yin In</span>&nbsp;<i class="fa fa-caret-down"></i>
+			  </div>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+			    <ul>
+			    	<li class="mobile-open">Yin in</li>
+			    	<li><a href="order_list.html">預定管理</a></li>
+			    	<li><a href="my_trip.html">我的行程</a></li>
+			    	<li><a href="account_info.html">帳號資料</a></li>
+			    	<li><a href="sign_out">登出</a></li>
+			    </ul>
+			  </ul>
+			</div>
+		</div>
+	</header>
+    <div class="main-wrap main-gray-wrap">
+    	<div class="trip-content">
+			<div class="trip-filter-wrap">
+				<div class="filter-content">
+					<span class="filter-title"><i class="title-icon-1"></i>行程類型</span>
+					<div class="filter-item">
+						<select class="filter-select-mobile">
+						  <optison>全部</option>
+						  <option>城市之旅</option>
+						  <option>親子共遊</option>
+						  <option>悠閒慢活</option>
+						  <option>山間林道</option>
+						  <option>極限挑戰</option>
+						</select>
+						<ul class="filter-select-pad">
+							<li><span class="item-btn active">全部</span></li>
+							<li><span class="item-btn">城市之旅</span></li>
+							<li><span class="item-btn">親子共遊</span></li>
+							<li><span class="item-btn">悠閒慢活</span></li>
+							<li><span class="item-btn">山間林道</span></li>
+							<li><span class="item-btn">極限挑戰</span></li>
+						</ul>												
+					</div>	 
+				</div>
+				<div class="filter-content">
+					<span class="filter-title"><i class="title-icon-2"></i>行程地區</span>
+					<div class="filter-item">
+						<select class="filter-select-mobile">
+						  <option>全部</option>
+						  <option>台北</option>
+						  <option>新北市</option>
+						  <option>桃園</option>
+						  <option>新竹</option>
+						  <option>苗栗</option>
+						  <option>台中</option>
+						  <option>彰化</option>
+						  <option>南投</option>
+						  <option>雲林</option>
+						  <option>嘉義</option>
+						  <option>台南</option>
+						  <option>高雄</option>
+						  <option>屏東</option>
+						  <option>宜蘭</option>
+						  <option>花蓮</option>
+						  <option>台東</option>
+						  <option>澎湖</option>
+						  <option>金門</option>
+						  <option>馬祖</option>				  						  
+						</select>
+						<ul  class="filter-select-pad">
+							<li><span class="item-btn active">全部</span></li>
+							<li><span class="item-btn">台北</span></li>
+							<li><span class="item-btn">新北市</span></li>
+							<li><span class="item-btn">桃園</span></li>
+							<li><span class="item-btn">新竹</span></li>
+							<li><span class="item-btn">苗栗</span></li>
+							<li><span class="item-btn">台中</span></li>
+							<li><span class="item-btn">彰化</span></li>
+							<li><span class="item-btn">南投</span></li>
+							<li><span class="item-btn">雲林</span></li>
+							<li><span class="item-btn">嘉義</span></li>
+							<li><span class="item-btn">台南</span></li>
+							<li><span class="item-btn">高雄</span></li>
+							<li><span class="item-btn">屏東</span></li>
+							<li><span class="item-btn">宜蘭</span></li>
+							<li><span class="item-btn">花蓮</span></li>
+							<li><span class="item-btn">台東</span></li>
+							<li><span class="item-btn">澎湖</span></li>
+							<li><span class="item-btn">金門</span></li>
+							<li><span class="item-btn">馬祖</span></li>			
+						</ul>
+					</div> 
+				</div>				
+			</div>
+			<div class="trip-right-wrap">
+				<div class="trip-righttop-wrap">
+					<div class="search-input-content">
+						<input class="search-input" placeholder="搜尋好玩的行程" type="text"><i class="fa fa-search"></i>
+					</div>					
+					<a href="share_trip.html" class="postTrip-btn"><i class="fa fa-pencil-square-o"></i>&nbsp;我要推薦</a>
+				</div>
+				<div class="hrline"></div>
+				<div class="trip-event-content">
+					<ul class="evnet-list">
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img">
+									<a href="trip_content.html"><img src="images/p1.jpg" alt=""></a>
+									<div class="favorite-botton-content"></div>
+									<a href="" class="favorite-btn"><i class="fa fa-heart"></i></a>									
+								</div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img">
+									<a href="trip_content.html"><img src="images/p2.jpg" alt=""></a>
+								</div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img"><a href="trip_content.html"><img src="images/p2.jpg" alt=""></a></div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img"><a href="trip_content.html"><img src="images/p1.jpg" alt=""></a></div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img"><a href="trip_content.html"><img src="images/p1.jpg" alt=""></a></div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img"><a href="trip_content.html"><img src="images/p1.jpg" alt=""></a></div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>
+						<li>
+							<div class="trip-event-box">
+								<div class="event-box-img"><a href="trip_content.html"><img src="images/p1.jpg" alt=""></a></div>
+								<div class="event-text">
+									<div class="event-box-title">沿著海岸線吹海風計畫</div>
+									<div class="event-panel">
+										<div class="user-nickname">
+											<a href="user_trip.html"><img src="images/user-img.png" alt="">Yin IN</a>
+										</div>
+										<div class="event-points-content">
+											<div class="event-collect-points"><i class="fa fa-heart"></i>&nbsp;<span>0</span></div>
+											<div class="event-click-points"><i class="fa fa-eye"></i>&nbsp;<span>0</span></div>			
+										</div>
+
+
+									</div>
+								</div>
+							</div>							
+						</li>																																				
+					</ul>
+
+				</div>				
+			</div>
+    	</div>
+    	<footer class="footer">
+    		<span class="copyright">Copyright © 2014 OOBIKE All rights reserved</span>
+    		<ul class="community-button">
+    			<li><a href=""><i class="fa fa-facebook"></i></a></li>
+    			<li><a href=""><i class="fa fa-twitter"></i></a></li>
+    			<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+    		</ul>
+    	</footer>
+    </div>
+<!--登入視窗 start-->
+<div class="modal fade login-page" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="login-title">登入</div>
+      <div class="login-content">
+      	<a href="" class="login-fb-btn"><i class="fa fa-facebook"></i>使用FACEBOOK登入</a>
+      	<div class="emaillogintip-text border-center">
+      		<span>或使用電子郵件</span>
+      	</div>
+      	<div class="login-form">
+	       	<form>
+	      		<input type="email" placeholder="請輸入您的Email信箱" required="required">
+	      		<input type="password" placeholder="請輸入您的密碼" required="required">
+	      		<input type="submit" value="登入" class="sendlogin-btn">
+	      	</form>     		
+      	</div>      	
+		<div class="tip-content">
+	      	<a href="" data-toggle="modal" data-target=".forgetpassword-page">忘記密碼</a>
+	      	<div class="signtip-text">
+	      		您還沒有註冊嗎?&nbsp;<a href="sign_up.html">註冊</a>
+	      	</div>			
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--登入視窗 ent-->
+<!--忘記密碼視窗 start-->
+<div class="modal fade forgetpassword-page" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="login-title">忘記密碼</div>
+      <div class="login-content">
+      	<div class="tip-content tip-content-1">
+      		<span>輸入註冊OOBIKE的Email信箱，我們將寄送【重設密碼認證信】！</span>
+      	</div>
+      	<div class="login-form">
+	       	<form>
+	      		<input type="email" placeholder="請輸入您的Email信箱" required="required">
+	      		<input type="submit" value="重設密碼" class="sendlogin-btn">
+	      	</form>     		
+      	</div>      	
+		<div class="tip-content">
+	      	<a href="" data-toggle="modal" data-target=".login-page">登入 OOBIKE</a>
+	      	<div class="signtip-text">
+	      		您還沒有註冊嗎?&nbsp;<a href="sign_up.html">註冊</a>
+	      	</div>			
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--忘記密碼視窗 ent-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/style.js"></script>    
+</body>
+</html>

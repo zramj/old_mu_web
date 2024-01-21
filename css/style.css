@@ -1,0 +1,378 @@
+@charset "UTF-8";
+@import url("normalize.css");
+/**
+ * 
+ * @authors Zoe 
+ * @date    2015-11-01 
+ * @version 002
+ */
+@import url(http://fonts.googleapis.com/css?family=Sofadi+One);
+@import url(http://fonts.googleapis.com/css?family=Lusitana:700);
+@import url(http://fonts.googleapis.com/css?family=Rosario:700);
+
+.noice{
+	color: #D20000;
+}
+body{
+	background: url(../img/bg.png);
+	font-family: "微軟正黑體";
+}
+.muWarp{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	position: absolute;
+}
+.headerTitle{
+	font-size: 0px;
+	white-space: nowrap;
+	text-indent: 100%;
+}
+.muLifeContent{
+	width: 15%;
+	float: left;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+.logo{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.logo span{
+	display: inline-block;
+	font-size: 36px;
+	padding: 10px;
+	border: 3px solid #4F4F4F;
+	font-family: 'Sofadi One', cursive;
+}
+.logo span:hover{
+	background: #4F4F4F;
+	color: #fff;
+}
+.navLink{
+	margin-top: 50px;
+}
+.navLink ul {
+	padding: 0 30px;
+}
+.navLink li {
+	margin: 10px 0;
+}
+.IconLI{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+.navLink .activeLi a{
+	color: #2a6496;
+}
+.navLink a{
+	font-size: 16px;
+	font-family: 'Lusitana', serif;
+	color: #141414;
+	-webkit-transition: margin-left 400ms linear;
+	transition: margin-left 400ms linear;
+}
+.navLink a:hover{
+	text-decoration: none;
+	margin-left: 10px;
+	-webkit-transition: margin-left 400ms linear;
+	transition: margin-left 400ms linear;
+}
+
+
+.muRightContent{
+	width: 80%;
+	float: right;
+	background: #f9f9f9;
+	padding: 3em;
+	margin: 1em 2em;
+	position: relative;
+	right: 0;
+}
+.Ptext{
+	color: #34A0C2;
+}
+.title{
+	font-family: 'Rosario', sans-serif;
+	color: #2E2E2E;
+	letter-spacing: 1px;
+	padding-bottom: 10px;
+	border-bottom: 5px #88A6B8 solid;
+}
+.portfolioContent, .aboutContent{
+	margin-top: 30px;
+}
+.workLink {
+	display: inline-block;
+}
+.workLink a{
+	margin-bottom: 5px;
+	opacity: 0.7;
+	-webkit-transition: opacity 400ms linear;
+	transition: opacity 400ms linear;
+}
+.workLink a:hover{
+	opacity: 1;
+	-webkit-transition: opacity 400ms linear;
+	transition: opacity 400ms linear;
+}
+.pContent{
+	margin-bottom: 20px;
+}
+.pText{
+	display: block;
+	font-size: 13px;
+	color: #636363;
+	padding: 3px;
+	background: #fff;
+	border-right: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	/*background: #E5EAEE;*/
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.workImg{
+	float: left;
+	width: 48%;
+	background: #fff;
+	padding: 10px;
+}
+.workImg img{
+	width: 100%;
+	height: auto;
+}
+.detialTitle{
+	font-size: 15px;
+	font-weight: bold;
+	padding: 15px 0;
+	border-bottom: 2px solid #666666;
+	margin-bottom: 10px;
+}
+.workDetial{
+	float: right;
+	width: 50%;
+}
+.workText-1{
+	color: #828282;
+	font-size: 14px;
+}
+.workInfo{
+	margin-top: 30px;
+}
+.workBack{
+	text-align: center;
+}
+.imgPage img{
+	width: 100%;
+}
+.closebutton {
+margin: 5px 10px;
+}
+.ih-item.square.effect4 a:hover .info.info2{
+	width: 100%;
+	top: 25px;
+}
+.ih-item.square.proimgih{
+	width: 100%;
+	height: auto;
+}
+
+.ih-item.square.effect4 a:hover .mask1.mask1-1 {
+  -webkit-transform: rotate(59deg) translateX(1px);
+  -moz-transform: rotate(59deg) translateX(1px);
+  -ms-transform: rotate(59deg) translateX(1px);
+  -o-transform: rotate(59deg) translateX(1px);
+  transform: rotate(59deg) translateX(1px);
+}
+.ih-item.square.effect4 a:hover .mask2.mask2-1 {
+  -webkit-transform: rotate(59deg) translateX(-1px);
+  -moz-transform: rotate(59deg) translateX(-1px);
+  -ms-transform: rotate(59deg) translateX(-1px);
+  -o-transform: rotate(59deg) translateX(-1px);
+  transform: rotate(59deg) translateX(-1px);
+}
+
+/*about*/
+.aboutTitle{
+	border-bottom: 5px #E0C0C0 solid;
+}
+.Atext{
+	font-size: 13px;
+	font-family: verdana;
+	color: #CC8E8E;
+	padding: 20px 0;
+	border-bottom: 1px solid #cccccc;
+}
+.aboutStory{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background: #ECECEC;
+	padding: 20px;
+}
+.myphoto{
+	float: left;
+	width: 180px;
+	height: 180px;
+	padding:10px;
+	background: url(../img/about/myphoto.jpg) 50% 50% no-repeat #fff;
+}
+.storyContent{
+	font-size: 13px;
+	letter-spacing: 1px;
+	line-height: 25px;
+	color: #A57122;
+	margin-left: 20px;
+	float: left;
+}
+.aboutwork{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background: #ECECEC;
+	padding: 20px;
+	margin:20px 0;
+	font-family: "微軟正黑體";
+	font-size: 13px;
+	line-height: 25px;
+	color: #777;
+}
+.aboutwork ul{
+	margin:0;
+	padding: 0;
+	list-style: none;
+}
+.aboutwork li{
+	border-left:  2px solid #2492FF;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin: 10px 0;
+	padding-left: 10px; 
+	background: #fff;
+}
+.workText{
+	display: inline-block;
+	color: #78BCBC;
+	margin-left: 3em;
+}
+.aboutMuinfo{
+	width: 100%;
+	height: auto;
+	overflow: hidden;.
+	background: #fff;
+	padding: 20px;
+	margin: 20px 0;
+	font-family: "微軟正黑體";
+	font-size: 14px;
+	color: #5A5A5A;
+	letter-spacing: 1px;
+	background: #ECECEC;
+}
+.infoText{
+	display: inline-block;
+	padding: 3px 5px;
+	background: #4F4F4F;
+	color: #fff;
+	margin-right: 10px;
+	font-size: 16px;
+}
+
+
+/*footer*/
+.footercopyRight{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	bottom: 0;
+	text-align: center;
+	font-size: 1em;
+	padding: 20px 0 30px 0;
+	color: #676767;
+	font-family: "Comic Sans MS";
+}
+
+
+/*RWD*/
+@media screen and (max-width: 800px){
+	
+	.navLink span.glyphicon, .IconLI{
+		display: none;
+	}
+	.workImg, .workDetial{
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.storyContent{
+		margin: 20px 0;
+	}
+
+}
+
+@media screen and (max-width: 600px){
+	.muLifeContent, .muRightContent{
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+		position: static;
+	}
+	.logo {
+		float: left;
+		margin: 0 1em;
+	}
+	.navLink span.glyphicon, .IconLI{
+		display: none;
+	}
+	.navLink{
+		float: left;
+		margin: 5px 0;
+	}
+	.navLink li{
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	.navLink a{
+		display: inline-block;
+		padding: 4px 10px;
+		transition:none;		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		color: #141414;
+		background: none;
+		border: 1px solid #B8B8B8;
+	}
+	.navLink a:hover{
+		transition:none;
+		margin: 0;
+		color: #fff;		
+		background: #6A9FCC;
+		border: 1px solid #fff;
+	}
+	.navLink .activeLi a{
+		color: #fff;		
+		background: #6A9FCC;
+		border: 1px solid #fff;		
+	}
+	.navLink .activeLi a:hover{
+		color: #fff;
+	}
+	.muRightContent{
+		margin: 0;
+	}
+	.pText{
+		letter-spacing:0;
+	}
+	.ih-item.square.effect4 .info.info2 h3{
+		font-size: 13px;
+	}
+	.ih-item.square.effect4 a:hover .info.info2{
+	width: 100%;
+	top: 10px;
+	}
+}

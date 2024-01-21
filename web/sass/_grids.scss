@@ -1,0 +1,707 @@
+// Requirements
+// ============
+
+@import "susy";
+@import "breakpoint";
+@import "compass/css3";  
+
+
+//-------- 設定 開始 -----------
+ 
+    //susy 環境設定
+    $susy: (
+          flow: ltr,
+          math: fluid,
+          output: float,
+          gutter-position: split,
+          container: auto,
+          container-position: center,
+          columns: 4,
+          gutters: 1/4,
+          column-width: false, 
+          global-box-sizing: content-box, 
+          last-flow: to,
+          debug: (
+                image: hide,
+                //image: show,
+                color: rgba(#66f, .25),
+                output: background,
+                toggle: top right,
+          ),
+          use-custom: (
+                background-image: true,
+                background-options: false,
+                box-sizing: true,
+                clearfix: false,
+                rem: true,
+          )
+    );
+ 
+    //設定三種尺寸
+    $break_layout : 
+    (
+        mobile: 
+        (
+            break:  0px,
+            layout: 4
+        ), 
+        pad: 
+        (
+            break:  768px,
+            layout: 8
+        ), 
+        desktop: 
+        (
+            break:  1200px,
+            layout: 12
+        )
+
+    );
+
+ 
+//-------- 設定 結束 -----------
+ 
+ 
+//-------- 樣式設計 開始 --------
+
+    html, body 
+    {
+        height: 100%;
+    }
+ 	//header RWD 設計
+    .header {
+ 		
+        @include _break("mobile") {
+            @include container();
+             .navToggle-button {
+            	@include span(1);
+            	height: 50px;
+            }
+            .logo {
+            	@include span(2);
+            	text-align: center;
+            	height: 50px;
+            	.logo-img {
+            		width: 130px;
+            	}
+            }
+            .function-area {
+            	@include span(1 last);
+            	height: 50px;
+				a {
+					padding: 5px 10px;					
+					&.signUp-btn {
+						display: none;
+					}
+				}
+                .user-menu {
+                    .user-page-btn {
+                        img {
+                            margin: 0 ;
+                        }
+                        .mobile-close {
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu {
+                        left: -95px;
+                        top: 62px;
+                    }                    
+                }
+            }
+
+        }    
+        @include _break("pad") {
+            @include container();
+             .navToggle-button {
+            	@include span(2);
+            }
+            .logo {
+            	@include span(4);
+            	.logo-img {
+            		width: 150px;
+            	}
+            }
+            .function-area {
+            	@include span(2 last);
+				a {
+					padding: 8px 12px;
+					&.signUp-btn {
+						display: inline;
+					}					
+				}
+                .user-menu {
+                    .user-page-btn {
+                        img {
+                            margin: 0 16px 0 0 ;
+                        }                        
+                        .mobile-close {
+                            display: inline;
+                        }
+                    }
+                    .mobile-open {
+                        display: none;
+                    }
+                    .dropdown-menu {
+                        left: -35px;
+                        top: 62px;
+                    }                      
+                }                            	
+            }
+
+        }    
+        @include _break("desktop") {
+            @include container();
+             .navToggle-button {
+            	@include span(2);
+            }
+            .logo {
+            	@include span(8);		
+            }
+            .function-area {
+            	@include span(2 last);
+            }
+
+        }    
+    }	
+	//首頁 中間內容 RWD 設計
+    .index-content {
+        position: relative;
+        top: 70px;        
+        @include _break("mobile") {
+            @include container();
+            min-height: 88%;
+            .newsContent {
+				@include full;
+				padding: 35px 0;
+            }
+            .ordercarContent {
+				@include full;
+					.indexmain-text {
+						font-size: 27px;
+						line-height: 42px;
+						text-align: left;
+						padding-bottom: 50px;
+					}
+					.ordercar-btn {
+						@include break; 
+					}
+            }
+        }    
+
+        @include _break("pad") {
+            @include container();
+            min-height: 93%;
+            .newsContent {
+				@include span(6 of 8);
+				@include pre(1 of 8);
+				padding: 90px 0;
+            }
+            .ordercarContent {
+				@include span(6 of 8);
+				@include pre(1 of 8);
+
+					.indexmain-text {
+						font-size: 38px;
+						line-height: 57px;
+						padding-bottom: 50px;
+					}
+            }            
+        } 
+
+        @include _break("desktop") {
+            @include container();
+            min-height: 92%;
+            .newsContent {
+				@include span(4 of 12);
+				@include pre(1 of 12);
+				padding: 100px 0;
+            }
+            .ordercarContent {
+				@include span(4 of 12);
+				@include pre(1 of 12);
+					.indexmain-text {
+						font-size: 38px;
+						line-height: 57px;
+						padding-bottom: 50px;
+					}
+
+            }             
+        }    
+    }
+
+    // datainput-content資料填寫區塊  RWD 設計
+    .datainput-content {
+        position: relative;
+        top: 70px;    
+         @include _break("mobile") {
+            @include container();
+            .datainput-title, .datainput-form, .tip-content {
+                @include full;
+            }
+            .datainput-title {
+                margin-bottom: 20px;
+            }
+            .input-halfgrid {
+                width: 45%;
+                float: left;
+                margin-right: 5%;
+                &.last {
+                    float: right;
+                    margin: 0;
+                }
+            }
+            //填寫取還車資料的input框框
+            .input-specialgrid {
+                width: 83.5%;
+                float: left;
+            }   
+            .photo-content {
+                ul {
+                    li {
+                        @include full;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .orderlist-content-Wrap {
+                .orderlist-title {
+                    font-size: 13px;
+                    letter-spacing: 0;
+                }
+            }
+            .orderlist-bikes-content {
+                margin: 10px;
+            }
+        }    
+
+        @include _break("pad") {
+            @include container();
+            .datainput-title, .datainput-form, .tip-content {
+                @include span(4 of 8);
+                @include pre(2 of 8);
+            }
+            .orderlist-bikes-content {
+                @include container();
+                .orderbikes-img {
+                    @include span(3 of 8);
+                }
+                .orderbikes-data-content {
+                    @include span(5 of 8);
+                    margin-top: 10px;
+                }                
+            }
+             .orderlist-content-Wrap {
+                .orderlist-title {
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }                              
+
+        }
+
+        @include _break("desktop") {
+            @include container();
+            .datainput-title, .datainput-form, .tip-content {
+                @include span(4 of 12);
+                @include pre(4 of 12);
+            }
+            .photo-content {
+                ul {
+                    li {
+                        @include gallery(6 of 12);
+                    }
+                }
+            }
+            .input-append {
+                float: left;
+                width: 50%;
+            }            
+          
+            //租車頁-確認車款列表
+            .orderbikes-info-list, .orderlist-bikes-content {
+                @include container();
+                .orderbikes-img {
+                    @include span(6 of 12);
+                }
+                .orderbikes-data-content {
+                    @include span(6 of 12);
+                }
+            }
+            .orderlist-bikes-content {
+                @include container();
+                .orderbikes-img {
+                    @include span(4 of 12);
+                }
+                .orderbikes-data-content {
+                    @include span(7 of 12);
+                    @include pre(1 of 12);
+                    line-height: 27px;
+                }                
+            }
+             .orderlist-content-Wrap {
+                .orderlist-title {
+                    font-size: 18px;
+                }
+            }                         
+
+        }
+
+    }
+    // order-content 租車頁面 RWD 設計
+    .order-content {
+        position: relative;
+        top: 70px;    
+         @include _break("mobile") {
+            @include container();
+            //height: 50%;
+            .order-title{
+                @include full;
+            }
+            .order-title {
+                margin-bottom: 20px;
+            }
+            .order-selectCategory {
+                text-align: center;
+                .selectCategory-content {
+                    .category-title {
+                        display: inline-block;
+                        line-height: 40px;
+                        margin-left: 5px;
+                    }
+                    .category-select {
+                        width: 50%;
+                    }
+                    .form-select {
+                        padding: 10px 10px;
+                        margin: 0px 10px 15px;
+                    }                     
+                }
+                .saveCategory-btn {
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    width: 30%;
+                    margin: 10px 0 20px;
+                    letter-spacing: 3px;
+                }
+            }
+            .order-container{
+                .bike-list {
+                    margin: 0 auto;
+                    width: 285px;
+                }
+            }
+            .shoppingCar-content {
+                .shopping-btn {
+                    width: 80px;
+                    height: 80px;
+                }
+                .cars-count {
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                }
+            }            
+            
+        }    
+
+        @include _break("pad") {
+            @include container();
+            .order-title {
+                @include span(8);
+            }
+            .order-selectCategory {
+                text-align: left;
+                overflow: hidden; 
+                .selectCategory-content, .saveCategory {
+                    @include span(2 of 8);
+                }
+                .selectCategory-content {
+                    .category-select {
+                        width: 100%;
+                    }
+                    .form-select {
+                        padding: 10px 10px;
+                        margin: 0px 0px 15px;
+                    }                                        
+                }
+                .saveCategory-btn {
+                    width: 85%;
+                    margin-top: 40px;
+                    padding: 7px 0;
+                }
+            }
+            .order-container{
+                .bike-list {
+                    margin: 0 auto;
+                    width: 570px;
+                }               
+            }
+            .shoppingCar-content {
+                .shopping-btn {
+                    width: 100px;
+                    height: 100px;
+                }
+                .cars-count {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                }
+            }                                                                              
+        }
+
+        @include _break("desktop") {
+            @include container();
+            .order-title {
+                @include span(8 of 12);
+                @include pre(2 of 12);
+            }
+            .order-selectCategory {
+                @include span(8 of 12);
+                @include pre(2 of 12);              
+                .selectCategory-content, .saveCategory {
+                    @include span(2 of 8);
+                }
+                .saveCategory {
+                    text-align: center;
+                }                             
+            }
+            .order-container{
+                @include span(8 of 12);
+                @include pre(2 of 12);  
+                .bike-list {
+                    margin: 0 auto;
+                    width: 1140px;
+                }                               
+            }
+
+        }
+
+    }
+
+    // trip-content資料填寫區塊  RWD 設計
+    .trip-content {
+        position: relative;
+        top: 70px;    
+        @include _break("mobile") {
+            @include container();
+            .trip-filter-wrap {
+                .filter-content {
+                    padding: 10px 10px 0;
+                    margin: 5px 0px;
+                }
+                .filter-title {
+                    float: left;
+                    margin-left: 15px;
+                }
+                .filter-item {
+                    .filter-select-pad {
+                        display: none;
+                    }
+                }
+            }
+            .trip-userInfo-wrap {
+               .trip-user-avatar {
+                   padding: 10px 0 0;
+               }
+               .trip-user-about {
+                    width: 260px;
+               }
+               .trip-user-menu {
+
+                    ul {
+                        width: 265px;
+                        padding: 0;
+                        li {
+                            float: left;
+                            margin-right: 15px;
+                        }
+                    }
+               } 
+            }            
+            .trip-right-wrap {
+                .trip-righttop-wrap {
+                    margin-top: 10px;
+                    width: 310px;
+                    margin: 0 auto;
+                    .search-input-content {
+                        width: 45%;
+                        display: inline-block;
+                        margin-left: 20px;                       
+                        .search-input {
+                           
+                        }
+                        .fa-search {
+                            top: 17px;
+                            right: 10px;
+                            color: #747373;
+                        }                        
+                    }
+
+                }
+                .hrline {
+                    width: 265px;
+                    margin: 10px auto 20px;
+                }
+                .evnet-list {
+                    @include container(265px);
+                }
+            }
+            //行程內容頁
+            .trip-photoshow,.trip-left-container, .trip-right-container {
+                @include container();
+                @include span(4);
+
+            }
+
+        }    
+
+        @include _break("pad") {
+            @include container();
+            .trip-filter-wrap {
+                @include span(2 of 8);
+                .filter-content {
+                    padding: 20px 10px 0px 35px;
+                    margin: 10px 0 0 ;
+                }
+                .filter-title {
+                    float: none;
+                    display: block;
+                    margin-left: 0;
+                }                
+                 .filter-item {
+                     .filter-select-mobile {
+                        display: none;
+                    }                   
+                    .filter-select-pad {
+                        display: block;
+                    }
+                }               
+            }
+            .trip-userInfo-wrap {
+               @include span(2 of 8);
+               .trip-user-avatar {
+                    margin: 20px 0 0;
+               }
+               .trip-user-about {
+                    width: 155px;
+               }
+               .trip-user-menu {
+                    margin-top: 20px;                
+                    ul {
+                        width: 100%;
+                        padding-left: 25px;
+                        li {
+                            float: none;
+                            margin-right: 10px;
+                        }
+                    }
+               }                                 
+            }
+            .trip-right-wrap {
+                @include span(6 of 8);
+                .trip-righttop-wrap {
+                    margin-top: 20px;
+                    width: 100%;
+                    .search-input-content {
+                        width: 240px;
+                        margin-left: 0;                                               
+                    }
+
+                }
+                .hrline {
+                    width: 100%;
+                    margin: 0px 0 20px;
+                }                
+                .evnet-list {
+                    @include container(600px);
+                }                
+            }
+            //行程內容頁
+            .trip-left-container {
+                @include span(5 of 8);
+            }
+            .trip-right-container {
+                @include span(3 of 8);
+            }                                                   
+        }
+
+        @include _break("desktop") {
+            @include container();           
+            .trip-filter-wrap {
+                @include span(2 of 12);
+            }
+            .trip-userInfo-wrap {
+                @include span(2 of 12);
+            }
+            .trip-right-wrap {
+                @include span(10 of 12);
+                .evnet-list {
+                    @include container(1200px);
+                }                
+                
+            }
+            //行程內容頁
+            .trip-photoshow {
+                @include span(8 of 12);
+                @include pre(2 of 12);
+            }
+            .trip-left-container {
+                @include span(5 of 12);
+                @include pre(2 of 12);
+            }
+            .trip-right-container {
+                @include span(3 of 12);
+            }                                       
+        }
+
+    }    
+
+
+    //頁尾footer RWD 設計
+    .footer {
+        @include _break("mobile") {
+        	height: 88px;
+            @include container();
+            .copyright {
+            	margin: 0 10px;
+            	font-size: 12px;
+            	letter-spacing: 0px;
+            }
+            .community-button {
+            	li {
+            		a {
+            			width: 20px;
+						height: 20px;
+						font-size: 14px;
+						margin: 0px 8px;
+            		}
+            	}
+            } 
+
+        }    
+        @include _break("pad") {
+        	height: 60px;
+            @include container();
+            .copyright {
+            	margin: 12px;
+            	font-size: 14px;
+            	letter-spacing: 1px;
+            }
+            .community-button {
+            	float: right;
+            	li {
+            		a {
+            			width: 25px;
+						height: 25px;
+						font-size: 16px;
+						margin: 12px 8px;
+            		}
+            	}            	
+            }            
+        }    
+        @include _break("desktop") {
+            @include container();
+
+        } 
+    }

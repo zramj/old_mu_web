@@ -1,0 +1,102 @@
+
+/*s統一樣式設定 使用sass @extend*/
+
+//藍底白字按鈕
+.oobtn {
+	background: #5e7b94;
+	color: #fff;
+	cursor: pointer;
+	@include border-radius(5px);
+}
+.oobtn-hover {
+	background: #879EB4;
+	color: #fff;
+	text-decoration: none;
+}
+
+//藍底白字按鈕 - 設為inline-block
+.oobtn-ib {
+	background: #5e7b94;
+	color: #fff;
+	display: inline-block;
+	cursor: pointer;
+	@include border-radius(5px);
+}
+
+//灰底灰框按鈕
+.oobtn-gray {
+	background: #fcfbfb;
+	border: 1px solid #c3c3c3;
+	@include border-radius(5px);
+	color: #5f7b94;
+	cursor: pointer;
+}
+.oobtn-gray-hover {
+	background: #F0F0F0;
+}
+
+//洞洞的欄位-白框
+.ooinput {
+	background: #fff;
+	border: 0;
+	padding: 13px 10px;
+	width: 240px;
+	margin: 10px 0;
+	font-size: 14px;
+	@include border-radius(5px);	
+}
+
+//洞洞的欄位-灰框
+.ooinput-gray {
+	background: #e9e9e9;
+	border: 0;
+	padding: 13px 10px;
+	width: 100%;
+	margin: 10px 0 20px;
+	font-size: 14px;
+	@include border-radius(5px);	
+}
+
+//下拉表單樣式
+.select {
+	background: #e9e9e9;
+	border: 0;
+	padding: 13px 10px;
+	width: 100%;
+	margin: 10px 0 20px;
+	font-size: 14px;
+	@include border-radius(5px);	
+}
+
+//下拉表單樣式-small
+.select-small {
+	background: #e9e9e9;
+	border: 0;
+	padding: 5px 10px;
+	width: 100%;
+	font-size: 14px;
+	@include border-radius(5px);	
+}
+
+//表單區塊 - 純文字敘述與純文字連結樣式
+.formarea {
+	font-size: 14px;
+	//line-height: 40px;
+	color: #272727;
+	a {
+		color: #272727;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			color: #5e7b94;
+		}
+	}
+}
+
+//icon的家
+.iconbg {
+	display: inline-block;
+	margin-right: 5px;
+	background-image: url(../images/icon.png);
+	background-repeat: no-repeat; 	
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OOBike</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="stylesheets/bootstrap.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+</head>
+<body>
+	<nav id="navMenu">
+		<ul>
+			<li><a href="about.html">關於我們</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="order.html">租借單車</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="trip.html">行程推薦</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="service.html">服務介紹</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="contact.html">聯絡我們</a></li>
+		</ul>
+	</nav>
+	<header class="header other-header">
+		<div class="navToggle-button">
+	      <div class="navToggle">
+	        <div class="icon"></div>
+	      </div>
+		</div>
+
+		<div class="logo"><a href="index.html" class="logo-img"></a></div>
+		<div class="function-area">
+			<div class="dropdown user-menu">
+			  <div id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  class="user-page-btn">
+			    <img src="images/user-img.png" alt=""><span  class="mobile-close">Yin In</span>&nbsp;<i class="fa fa-caret-down"></i>
+			  </div>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+			    <ul>
+			    	<li class="mobile-open">Yin in</li>
+			    	<li><a href="order_list.html">預定管理</a></li>
+			    	<li><a href="my_trip.html">我的行程</a></li>
+			    	<li><a href="account_info.html">帳號資料</a></li>
+			    	<li><a href="sign_out">登出</a></li>
+			    </ul>
+			  </ul>
+			</div>
+		</div>
+	</header>
+    <div class="main-wrap main-gray-wrap">
+    	<div class="datainput-content">
+			<div class="datainput-title"><h1 class="title-text">租借單車</h1></div>
+			<div class="datainput-form">
+				<form>
+					<div class="orderbikes-infowrap">
+						<div class="orderbikes-title">確認車款</div>
+						<ul class="orderbikes-info">
+							<li class="orderbikes-info-list">
+								<div class="orderbikes-img">
+									<img src="images/car1.jpg" alt="">
+								</div>
+								<div class="orderbikes-data-content">
+									<div class="bike-name">
+										<span class="sub-text">Trinity Composite 1</span>
+									</div>
+									<div class="bike-info">
+										<span class="sub-text">22</span>&nbsp;/&nbsp;
+										<span class="sub-text">碳纖</span>&nbsp;/&nbsp;
+										<span class="sub-text">L</span>
+									</div>
+									<div class="bike-count">
+										<span class="count-text">&nbsp;1&nbsp;台</span>
+									</div>
+									<div class="bike-price">
+										<span class="note">NT.&nbsp;1200&nbsp;(天)</span>
+									</div>
+									<div class="bike-for-userheight">
+										身高&nbsp;:&nbsp;<input type="text">&nbsp;cm&nbsp;<i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" data-original-title="輸入欲搭配的身高，為您調整適合車身"></i>
+									</div>
+								</div>
+								<i class="fa fa-times orderbikes-delete-btn" data-toggle="tooltip" data-placement="left" data-original-title="移除"></i>								
+							</li>
+							<li class="orderbikes-info-list">
+								<div class="orderbikes-img">
+									<img src="images/car1.jpg" alt="">
+								</div>
+								<div class="orderbikes-data-content">
+									<div class="bike-name">
+										<span class="sub-text">Trinity Composite 1</span>
+									</div>
+									<div class="bike-info">
+										<span class="sub-text">22</span>&nbsp;/&nbsp;
+										<span class="sub-text">碳纖</span>&nbsp;/&nbsp;
+										<span class="sub-text">L</span>
+									</div>
+									<div class="bike-count">
+										<span class="count-text">&nbsp;1&nbsp;台</span>
+									</div>
+									<div class="bike-price">
+										<span class="note">NT.&nbsp;1200&nbsp;(天)</span>
+									</div>
+									<div class="bike-for-userheight">
+										身高&nbsp;:&nbsp;<input type="text">&nbsp;cm&nbsp;<i class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" data-original-title="輸入欲搭配的身高，為您調整適合車身"></i>
+									</div>
+								</div>
+								<i class="fa fa-times orderbikes-delete-btn" data-toggle="tooltip" data-placement="left" data-original-title="移除"></i>								
+							</li>							
+						</ul>
+					</div>
+					<div class="orderbikes-button">
+						<a href="order.html" class="goback-btn">回上一步</a>
+						<a href="order_step2.html" class="next-btn">填寫租車資料</a>
+					</div>
+				</form>
+			</div>
+
+    	</div>
+    	<footer class="footer">
+    		<span class="copyright">Copyright © 2014 OOBIKE All rights reserved</span>
+    		<ul class="community-button">
+    			<li><a href=""><i class="fa fa-facebook"></i></a></li>
+    			<li><a href=""><i class="fa fa-twitter"></i></a></li>
+    			<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+    		</ul>
+    	</footer>
+    </div>
+<!--登入視窗 start-->
+<div class="modal fade login-page" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="login-title">登入</div>
+      <div class="login-content">
+      	<a href="" class="login-fb-btn"><i class="fa fa-facebook"></i>使用FACEBOOK登入</a>
+      	<div class="emaillogintip-text border-center">
+      		<span>或使用電子郵件</span>
+      	</div>
+      	<div class="login-form">
+	       	<form>
+	      		<input type="email" placeholder="請輸入您的Email信箱" required="required">
+	      		<input type="password" placeholder="請輸入您的密碼" required="required">
+	      		<input type="submit" value="登入" class="sendlogin-btn">
+	      	</form>     		
+      	</div>      	
+		<div class="tip-content">
+	      	<a href="" data-toggle="modal" data-target=".forgetpassword-page">忘記密碼</a>
+	      	<div class="signtip-text">
+	      		您還沒有註冊嗎?&nbsp;<a href="sign_up.html">註冊</a>
+	      	</div>			
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--登入視窗 ent-->
+<!--忘記密碼視窗 start-->
+<div class="modal fade forgetpassword-page" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="login-title">忘記密碼</div>
+      <div class="login-content">
+      	<div class="tip-content tip-content-1">
+      		<span>輸入註冊OOBIKE的Email信箱，我們將寄送【重設密碼認證信】！</span>
+      	</div>
+      	<div class="login-form">
+	       	<form>
+	      		<input type="email" placeholder="請輸入您的Email信箱" required="required">
+	      		<input type="submit" value="重設密碼" class="sendlogin-btn">
+	      	</form>     		
+      	</div>      	
+		<div class="tip-content">
+	      	<a href="" data-toggle="modal" data-target=".login-page">登入 OOBIKE</a>
+	      	<div class="signtip-text">
+	      		您還沒有註冊嗎?&nbsp;<a href="sign_up.html">註冊</a>
+	      	</div>			
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--忘記密碼視窗 ent-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/style.js"></script>    
+</body>
+</html>

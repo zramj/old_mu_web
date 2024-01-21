@@ -1,0 +1,1506 @@
+@import "compass/css3";
+@import "compass";
+$base-font-size: 16px;  
+$base-line-height: 24px;  
+$rhythm-unit: 'px';
+$link-color: #5e7b94;
+$count-bg: #d9a720;
+$count-bg-day: #20cad9; 
+
+/*全域設定*/
+html {  
+	@include adjust-font-size-to(16px);  
+
+}  
+p {  
+    @include adjust-font-size-to(16px);  
+    @include trailer(1);  
+}  
+h1 {  
+    @include adjust-font-size-to(40px);  
+}  
+img {  
+  //float: left;  
+  //margin: 0 16px 0 0;  
+}  
+a {
+	text-decoration: none;
+}
+body {
+	font-family: "Verdana", "Lucida Sans Unicode", "Arial", "Helvetica Neue", "Helvetica", "sans-serif", "微軟正黑體", "新細明體", "蘋果儷中黑", "小塚ゴシック Pro", "ヒラギノ角ゴ";
+	color: #333333;
+	letter-spacing: 1px;
+}
+.hrline {
+	height: 1px;
+	background: #9f9e9e;
+	width: 100%;
+	margin: 10px 0 20px;
+}
+.sub-text {
+	color: #AD8131;
+}
+.tip-content {
+	text-align: center;
+	font-size: 14px;
+	color: #787878;
+	line-height: 40px;
+	padding-bottom: 15px;
+	a {
+		color: #272727;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			color: $link-color;
+		}
+	}
+}
+.tip-content-1 {
+	padding: 15px 0 10px;
+	line-height: 24px;
+	width: 240px;
+	margin: 0 auto;
+}
+.tip-content-2 {
+	text-align: center;
+	font-size: 14px;
+	color: #787878;
+	margin-top: 10px;
+	a {
+		color: #272727;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			color: $link-color;
+		}
+	}	
+}
+.tip-content-3 {
+	text-align: left;
+	font-size: 14px;
+	color: #272727;
+	margin: 15px 0 20px;
+} 
+
+.clear {
+	clear: both;
+}
+
+.note {
+	color: #E21D22;
+}
+
+.special-nav-line {
+	margin: 0 auto;
+	width: 100%;
+	height: 1px;
+	@include background (linear-gradient(to right, rgba(0,0,0,0) 0%,#c2c2c2 40%,#c2c2c2 60%,rgba(0,0,0,0) 100%))	
+}
+
+/************************/
+
+//主選單
+#navMenu {
+	width: 180px ;
+	height: 100%;
+	position: fixed;
+	background: #fff;
+	top: 70px;
+	left: -180px;
+	opacity: .9;
+	z-index: 100;
+	@include transition(.5s);
+		ul {
+			margin: 20px 0;
+			padding: 0;
+			li {
+				text-align: center;
+				display: block;
+				a {
+					color: #1d1e1e;
+					display: block;
+					padding: 12px;
+					font-size: 15px;
+					letter-spacing: 2px;
+					font-weight: bold;
+					&:hover {
+						color: #6C6C6C;
+					}
+				}
+			}
+
+		}
+	&.openNav {
+		left: 0px;
+	}
+}
+
+//header
+.header {
+	width: 100%;
+	padding: 5px 5px 15px 5px;
+	position: fixed;
+	z-index: 98;
+	&.index-header {
+		opacity: .7;
+		background: #fff;		
+	}
+	&.other-header {
+		background: #f1f1f1;
+	}
+	.navToggle {
+	  @include navToggle(0px, 5px);	  
+	  .icon {
+	    @include icon(4px, 30px);	    
+	    &:before{
+	      @include icon-before(4px, 30px, -10px);
+	    }	    
+	    &:after{
+	      @include icon-after(4px, 30px, 10px);
+	    }	    
+	    &:hover{
+	      cursor: pointer;
+	    }
+	  }
+	  
+	  &.open {
+	    .icon {
+	      transition-duration: 0.5s;
+	      background: transparent;	      
+	      &:before{
+	        transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+	      }
+	      &:after{
+	        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+	      }
+	    }
+	  }
+	}
+	.logo-img {
+		height: 50px;
+		background:  url(../images/logo.png) 0 0 no-repeat;
+		display: inline-block;
+		@include background-size(contain);
+		//font-size: 0px;
+		//white-space: nowrap;
+		//text-indent: 100%;
+	}
+	.function-area {
+		text-align: right;
+		line-height: 50px;
+		a {
+			color: #333;
+			font-size: 14px;
+			&:hover {
+				color: $link-color;
+				text-decoration: underline;
+			}
+			&.login-btn,&.signUp-btn {
+				@extend .oobtn;
+				opacity: 1;
+				&:hover {
+					@extend .oobtn-hover;
+				}
+			}
+		}
+		.user-menu {
+			display: inline-block;
+			
+			#dLabel {
+				cursor: pointer;
+			}
+			.user-page-btn {			
+				img {
+					width: 35px;
+					height: 35px;
+					@include border-radius(50%);
+					border: 1px solid #5f7b94;
+					vertical-align: middle;
+				}
+			}
+			.mobile-open {
+				padding-left: 20px;
+				font-size: 17px;
+				font-weight: bold;
+			}
+            .dropdown-menu {
+            	background: #f5f5f5;
+				ul {
+					padding: 0;
+					line-height: 35px;
+					li {
+						a {
+							width: 158px;
+							display: inline-block;
+							padding: 0 30px;
+							&:hover {
+								background: #5f7b94;
+								color: #fff;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+            }   
+
+		}
+	}	
+}
+
+//main-wrap 首頁 - 中間主要內容(滿版單車背景圖)
+.main-wrap {
+	background: url(../images/bg-1.jpg) no-repeat center center fixed;
+	@include background-size(cover);
+	height: 100%; 
+	overflow: hidden;
+	.index-content {
+		.newsContent {
+			.news-text {
+				color: #fff;
+				@include text-shadow(1px 1px 2px #6D6B6B);
+				&:hover {
+					color:#BEDDF3;
+				}
+			}
+			.news-data {
+				color: #42A3F4;
+				@include text-shadow(1px 1px 2px #6D6B6B);
+				font-size: 14px;
+				display: block;
+			}
+		}
+		.ordercarContent {
+			text-align: center;
+			.indexmain-text {
+				letter-spacing: 5px;
+			}
+			.ordercar-btn {
+				@extend .oobtn;
+				font-size: 18px;
+				padding: 10px 30px;
+				letter-spacing: 3px;
+				&:hover {
+					@extend .oobtn-hover;
+				}
+			}
+		}
+	}
+}
+
+// datainput-Content 資料填寫區塊 - 中間主要內容(最下層背景灰底)
+.main-gray-wrap {
+	background: #f1f1f1;
+	overflow: auto;
+	.datainput-content {
+		background: #fff;
+		padding-bottom: 115px;
+		min-height: 92%;
+		.datainput-title {
+			text-align: center;
+			border-bottom: 1px solid #9f9e9e;
+			padding: 10px 0;
+			.title-text {
+				width: 100%;
+				text-align: center;
+				font-size: 20px;
+				letter-spacing: 5px;
+				margin: 0;				
+				color: #646464;				
+			}
+			.user-avatar {
+				width: 100%;
+				text-align: center;
+				overflow: hidden;
+				margin: 10px 0;
+				img {
+					width: 150px;
+					height: 150px;
+					@include border-radius(50%);
+					border: 2px solid #5f7b94;		
+				}
+			}
+			.user-avatar-btn {
+				display: inline-block;
+				width: 75px;
+				height: 25px;
+				font-size: 14px;
+				text-align: center;
+				cursor: pointer;
+				@extend .oobtn-gray;
+				&:hover {
+					@extend .oobtn-gray-hover;
+				}
+			}
+		}
+		.datainput-form {
+			@extend .formarea;
+			input {
+				@extend .ooinput-gray;
+				&.input-not-allowed {
+					background: #f4f4f4;
+					cursor: not-allowed;
+				}
+				&.sub-text-input {
+					margin: 0 0 10px;
+				}
+				&.subdate-text-input {
+					margin: 1px 0 0;
+					padding: 10px;
+					@include border-radius(0);
+					@include border-left-radius(5px);
+				}				
+
+			}
+			textarea {
+				@extend .ooinput-gray;
+				resize: none;
+				&.sub-text-input {
+					margin: 0 0 0px;
+				}				
+			}
+			.sub-text-content {
+				margin-bottom: 20px;
+				.form-select {
+					padding: 12px 10px;
+				}
+				.checkbox-inline {
+					display: inline-block;
+					color: #5f7b94;
+					height: 30px;
+					margin-right: 10px;					
+					.checkbox {
+						display: inline-block;
+						width: auto;
+						vertical-align: -webkit-baseline-middle;
+						margin-right: 5px;		
+					}
+				}
+			}
+			.fa-question-circle {
+				font-size: 16px;
+			}
+			.form-select {
+				@extend .select;
+				&.sub-text-input {
+					margin: 0 0 10px;
+				}				
+			}
+			.photo-content {
+				margin-bottom: 20px;
+				ul {
+					padding: 0;
+					li {
+						.pickfile {
+							min-height: 250px;
+							border: 1px solid #cccccc;
+							position: relative;
+							@include border-radius(5px);
+							.upload-selector-buttons {
+								font-size: 4em;
+								text-align: center;
+								margin-top: 80px;
+								cursor: pointer;
+								i {
+									color: #848484;
+									&:hover {
+										color: #272727;
+									}
+								}								 
+							}
+							.tips-container {
+								text-align: center;
+								margin-top: 15px;
+								.by-link-tip, .by-video-tip {
+									position: absolute;
+									width: 100%;
+									height: 245px;
+									background: #fff;
+									top: 0;
+									text-align: center;
+									@include border-radius(5px);
+									.sub-text {
+										margin-top: 45px;
+									}
+									input {
+										width: 80%;
+									}
+									button {										
+										padding: 3px 10px;
+										margin-right: 10px;
+										border: 0;
+										&.blue {
+											@extend .oobtn;
+											&:hover {
+												@extend .oobtn-hover;
+											}
+										}
+										&.gray {
+											@extend .oobtn-gray;
+											&:hover {
+												@extend .oobtn-gray-hover;
+											}
+										}
+
+									}
+								}
+								.by-link-tip {
+									z-index: 3;
+									display: none;
+								}
+								.by-video-tip {
+									z-index: 4;
+									display: none;
+								}
+							}
+							.pickfile-delete-btn {
+								position: absolute;
+								top: 0;
+								z-index: 5;
+								right: 6px;
+								color: #848484;
+								&:hover {
+									color: #272727;
+								}
+							}
+						}
+					}
+				}
+			}
+			.googlemap-content {
+				.loadingmap-btn {
+					@extend .oobtn;
+					display: inline-block;
+					width: 75px;
+					height: 25px;
+					text-align: center;
+					margin-right: 10px;
+					border: 0;					
+					&:hover {
+						@extend .oobtn-hover;
+					}
+				}
+				.map-content {
+					width: 100%;
+					min-height: 10px;
+					background: #D3F9DF;
+					margin: 5px 0 10px;
+				}
+			}
+			.input-append {
+				overflow: hidden;
+				.add-on {
+					cursor: pointer; 
+					line-height: 60px;
+					color: #5f7b94;
+					.fa-calendar {
+						color: #fff;
+						padding: 6px;
+						background: #5f7b94;
+						font-size: 16px;
+						margin-right: 10px;
+						@include border-radius(5px);
+					}
+				}
+			}
+			//填寫租車資料日期時間選擇的按鈕
+			.input-append {
+				.add-on {
+					.date-btn {
+						background: #fff;
+						color: #6F6F6F;
+						border: 1px solid #e9e9e9;
+						vertical-align: 10px;
+						padding: 10px;
+						@include border-radius(0);
+						@include border-right-radius(5px);
+						&:hover {
+							background: #f7f7f7;
+						}
+					}
+				}
+			}			
+			.profile-password-form {
+				&.hide {
+					display: none!important;
+				}
+			}
+			.form-fields {
+				input {
+					margin: 5px;
+				}
+			}
+			.changepw-btn {
+				display: inline-block;
+				color: #5f7b94;
+				text-decoration: underline;
+				background: #ffffff;
+				border: 0;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			.sendsignup-btn {
+				@extend .oobtn-ib;
+				margin-top: 10px;
+				&:hover {
+					@extend	.oobtn-hover;
+				}				
+			}
+			.savechanges-btn {
+				@extend .oobtn-ib;
+				margin-top: 30px;
+				&:hover {
+					@extend	.oobtn-hover;
+				}				
+			}			
+			.gohomepage-btn, .sharetrip-btn {
+				@extend .oobtn;
+				display: block;
+				text-decoration: none;
+				padding: 10px 0;
+				width: 100%;
+				text-align: center;
+				margin-top: 30px;
+				&:hover {
+					@extend .oobtn-hover;
+				}		  
+			}
+			.orderbikes-button {
+				text-align: center;
+				margin-top: 15px;
+				.goback-btn {
+					display: inline-block;
+					padding: 5px 10px;
+					@include border-radius(5px);
+					background: #555555;
+					color: #fff;
+					text-decoration: none;
+					&:hover {
+						opacity: .8;
+					}
+				}
+				.next-btn {
+					@extend .oobtn-ib;
+					text-decoration: none;
+					padding: 5px 10px;
+					margin-bottom: 10px;
+					&:hover {
+						@extend .oobtn-hover;
+					}
+				}
+				.checkBefore-btn {
+					cursor: pointer;
+				}				
+			}			
+		}
+	}
+	//租車頁面-選車款 單車列表
+	.order-content {
+		background: #fff;
+		padding-bottom: 115px;
+		min-height: 92%;
+		.order-title {
+			text-align: center;
+			border-bottom: 1px solid #9f9e9e;
+			padding: 10px 0;
+						
+			.title-text {
+				width: 100%;
+				text-align: center;
+				font-size: 20px;
+				letter-spacing: 5px;
+				margin: 0;				
+				color: #646464;				
+			}
+		}
+		.order-selectCategory {
+			border-bottom: 1px dashed #717171;
+			margin-bottom: 30px;
+		}
+		.category-title {
+			.title-icon-3 {
+				@extend .iconbg;
+				width: 35px;
+				height: 16px;
+				background-position: 0 -70px ;
+			}
+			.title-icon-4 {
+				@extend .iconbg;
+				width: 35px;
+				height: 16px;
+				background-position: 0 -100px ;
+			}
+			.title-icon-1 {
+				@extend .iconbg;
+				width: 35px;
+				height: 26px;
+				background-position: 0 0px ;
+			}					
+		}
+		.selectCategory-content {
+			.category-select {				
+				display: inline-block;
+			}			
+			.form-select {
+				@extend .select;
+				margin-top: 0;
+			}
+		}
+		.saveCategory-btn {
+			@extend .oobtn;
+			border: 0;
+			&:hover {
+				@extend .oobtn-hover;
+			}
+		}
+		.bike-list {
+			padding: 0;
+			overflow: hidden;
+			.bike-content {
+				float: left;
+
+			}
+		}
+		.bike-box {
+			width: 265px;
+			border: 1px solid #a3a3a3;
+			overflow: hidden;
+			margin: 0 10px 20px;
+			font-size: 14px;
+			@include border-radius(5px);
+			&:hover {
+				@include box-shadow(0px 0px 30px rgba(178, 178, 178, 0.4) inset,1px 1px 7px grey);
+			}
+			.bike-img {
+				width: 100%;
+				margin-bottom: 5px;
+				img {
+					width: 100%;
+				}
+			}
+			span {
+				display: inline-block;
+				padding-right: 10px;
+			}
+			.bike-name, .bike-subbox, .bike-size-select, .bike-count-input, .bike-price, .saveCars {
+				margin: 10px 0;
+				padding: 0 10px;
+			}
+			.bike-subbox {
+				overflow: hidden;
+			}
+			.bike-speed, .bike-colorselect {
+				float: left;
+				width: 50%;
+			}
+			.color-select, .size-select {
+				display: inline-block;
+			}
+			.color-select {
+				.form-select {
+					@extend .select-small;
+				}
+			}
+			.size-select {
+				width: 30%;
+				.form-select {
+					@extend .select-small;
+				}
+			}
+			.bike-count-input {
+				input {
+					@extend .ooinput-gray;
+					padding: 5px 10px;
+					width: 30%;
+					margin: 0;
+				}
+			}
+			.saveCars {
+				text-align: center;
+				.saveCars-btn {
+					@extend .oobtn-ib;
+					border: 0;
+					padding: 5px 10px;
+					width: 100%;
+					&:hover {
+						@extend .oobtn-hover;
+					}
+				}				
+			}
+
+
+		}
+		.shoppingCar-content {
+			position: fixed;
+			bottom: 65px;
+			right: 25px;
+			z-index: 1;
+			.shopping-btn {
+				background: #5f7b94 url(../images/shoppingcar-btn.png) 50% 50% no-repeat;
+				border: 3px solid #c8c8c8;
+				@include border-radius(50%);
+				@include background-size(75%);
+				&:hover {
+					opacity: .8;
+				}
+			}
+			.cars-count {
+				position: absolute;
+				top: -5px;
+				right: 7px;
+
+				@include border-radius(50%);
+				background: $count-bg;
+				text-align: center;
+				color: #fff;
+				font-size: 14px;
+				//display: none;				
+			}
+		}
+	}
+	//租車步驟 - 確認車款
+	.orderbikes-infowrap {
+		overflow: hidden;
+		width: 100%;
+		@include border-radius(5px);
+		border: 1px solid #b4b4b4;
+		margin-bottom: 20px;
+		ul {
+			li {
+				border-bottom: 1px solid #ccc;
+			}
+			li:last-child {
+				border-bottom: none;
+			}
+		}
+		.orderbikes-title {
+			width: 100%;
+			height: 40px;
+			background: #8eb5d8;
+			@include border-top-radius(5px);
+			font-size: 18px;
+			letter-spacing: 3px;
+			color: #fff;
+			text-align: center;
+			line-height: 40px;
+		}
+		.orderbikes-info {
+			overflow: hidden;
+			padding: 10px 0 0;
+			margin-top: 5px;
+			margin-bottom: 0;
+			.orderbikes-info-list {
+				position: relative;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				overflow: hidden;
+			}
+			.bike-name, .bike-info, .bike-count, .bike-for-userheight {
+				margin: 10px 0;
+			}
+			.orderbikes-img {
+				img {
+					width: 100%;
+				}
+			}
+			.orderbikes-data-content {
+				padding: 0 15px;
+			}
+
+			.bike-count, .bike-price {
+				display: inline-block;
+			}
+			.price-info {
+				display: block;				
+				margin: 10px 0;
+				.unit-price {
+					color: #959292;
+					float: left;
+				}
+				.price-subTotal {
+					float: right;
+				}
+
+			}
+			.bike-count {
+				margin-right: 10px;
+			}
+			.bike-for-userheight {
+				input {
+					padding: 6px 10px;
+					width: 35%;
+					margin: 10px 0;
+
+				}
+			}
+			.orderbikes-delete-btn {
+				position: absolute;
+				top: 0px;
+				right: 5px;
+				background: none;
+				border: 0;
+				font-size: 16px;
+				color: $link-color;
+				&:hover {
+					opacity: .7;
+				}
+			}			
+		}
+		.orderbikes-totalPrice {
+			text-align: right;
+			padding: 15px;
+			border-top: 1px solid #ccc;
+			.price-totalPrice {
+				font-weight: bold;
+				font-size: 16px;
+			}
+		}
+		
+		//訂單明細頁-資訊區塊
+		.order-data-content {
+			margin: 10px;
+			ul {
+				overflow: hidden;
+				padding-left: 15px;
+				margin: 0px 0 15px;
+				li {
+					padding: 5px 0;
+					span {
+						display: inline-block;
+					}
+				}
+			}
+			.sub-title-text {
+				font-size: 16px;
+			}
+			.cancel-order-btn {
+				@extend .oobtn-gray;
+				//float: right;
+				margin: 10px 0;
+				&:hover {
+					@extend .oobtn-gray-hover;
+				}
+			}
+		}
+	
+		.orderstatus-text {
+			font-size: 15px;
+			font-weight: bold;
+			&.ready {
+				color: #CF4458;
+			}
+			&.success {
+				color: #4e9b0a;
+			}
+			&.cancel {
+				color: #909090;
+			}
+		}		
+	}
+	//數量與天數tag
+	.count-text {
+		background: $count-bg;
+		color: #fff;
+		display: inline-block;
+		padding: 0px 5px;
+		@include border-radius(5px);
+	}
+	.daycount {
+		background: $count-bg-day;
+	}
+	//預定訂單列表		
+	.orderlist-content-Wrap {
+		overflow: hidden;
+		padding: 0;
+		margin-top: 0;
+		.orderlist-content {
+			width: 100%;
+			@include border-radius(5px);
+			border: 1px solid #b4b4b4;	
+			margin-bottom: 20px;		
+			.orderlist-title {
+				width: 100%;
+				height: 40px;
+				background: #747779;
+				@include border-top-radius(5px);
+				color: #fff;
+				line-height: 40px;
+				padding-left: 20px;
+				.orderstatus-text {
+					&.ready {
+						color: #F5B1B1;
+					}
+					&.success {
+						color: #B9F0A3;
+					}
+					&.cancel {
+						color: #D3D1D1;
+					}
+				}
+			}
+			.orderlist-info-content {
+				ul {
+					padding-left: 20px;
+					margin-top: 10px;
+					li {
+						margin: 5px 0;
+						span {
+							display: inline-block;
+						}
+						a {
+							color: $link-color;
+						}
+					}
+				}
+			}
+			.orderlist-bikes-content {
+				border-top: 1px solid #ccc;
+				img {
+					width: 100%;
+				}
+			
+			}
+			.goOrderdetail-btn {
+				text-decoration: none;
+				padding: 2px 10px;
+				@extend .oobtn;
+				display: block;
+				text-align: center;
+				width: 95%;
+				margin: 5px auto 10px;
+				&:hover {
+					@extend .oobtn-hover;
+				}
+			}				
+		}
+
+	}
+	//填寫租車資料(租還車資訊)
+	.orderbikes-fill-bikeinfo {
+		margin: 10px;
+		.sub-text-content {
+			margin: 0 10px 20px;
+		}
+	}
+
+	//行程頁面(行程推薦頁 我的行程頁)
+	.trip-content {
+		background: #fff;
+		padding-bottom: 115px;
+		min-height: 92%;
+		.filter-title {
+			font-weight: bold;
+			.title-icon-1 {
+				@extend .iconbg;
+				width: 35px;
+				height: 26px;
+				background-position: 0 0 ;
+			}
+			.title-icon-2 {
+				@extend .iconbg;
+				width: 35px;
+				height: 20px;
+				background-position: 0 -40px ;
+			}			
+		}
+		.filter-item {
+			.filter-select-mobile {
+				@extend .select;
+				padding: 5px 10px;
+				width: 45%;
+				margin: 0px 15px;
+			}
+			.filter-select-pad {
+				margin-top: 0;
+				font-size: 14px;
+				li {
+					.item-btn {
+						cursor: pointer;
+						display: inline-block;
+						padding: 2px 6px;
+						color: #5f7b94;
+						background: #fff;
+						margin: 2px 0;
+						@include border-radius(5px);
+						&:hover, &.active {
+							background: #dcb75d;
+							color: #fff;
+						}
+
+					}
+				}
+			}
+		}
+		.trip-userInfo-wrap {
+			.trip-user-avatar {
+				width: 100%;
+				text-align: center;
+				overflow: hidden;
+				//margin: 10px 0;
+				img {
+					width: 80px;
+					height: 80px;
+					@include border-radius(50%);
+					border: 2px solid #5f7b94;			
+				}
+			}
+			.trip-user-nickname {
+				width: 100%;
+				overflow: hidden;
+				font-weight: bold;
+				margin: 10px 0;
+				text-align: center;
+			}
+			.trip-user-about {
+				overflow: hidden;
+				margin: 10px auto;
+				font-size: 13px;
+				color: #7E7E7E;
+			}
+           .trip-user-menu {
+             ul {
+                overflow: hidden;
+                margin: 0 auto;
+                font-size: 15px;
+                font-weight: bold;
+                li {
+                	.user-menu-btn {
+                		display: inline-block;
+                		width: 115px;
+                		position: relative;
+                		color: #5f7b94;
+                		.fa-chevron-right {
+                			width: 100%;
+                			position: absolute;
+                			top: 5px;
+                			opacity: 0;
+                			color: #272727;
+                			&:hover, &.active {
+                				opacity: 1;
+                			}
+                		}
+                		&:hover, &.active  {
+                			color: #272727;
+                			text-decoration: none;
+                		}
+                	}
+                }
+             }
+           } 			
+		}
+		.trip-right-wrap {
+			.trip-righttop-wrap {
+				font-size: 14px;
+				.search-input-content {
+					position: relative;
+					.search-input {
+						background: #fff;
+                        border: 1px solid #cccccc;
+                        padding: 5px;
+						margin: 10px 0;
+						@include border-radius(5px);
+						width: 100%;						
+					}
+					.fa-search {
+						position: absolute;
+						cursor: pointer;
+					}					
+				}
+
+				.postTrip-btn {
+					@extend .oobtn-ib;
+					padding: 2px 10px;
+					margin-left: 10px;
+					&:hover {
+						@extend .oobtn-hover;
+					}
+				}
+			}
+			.hrline {
+				//margin-top: 0px;
+			}
+			.trip-event-content {
+				.evnet-list {
+					padding: 0;
+					margin: 0 auto;
+					li {
+						float: left;
+						.trip-event-box {
+							width: 265px;
+							height: 320px;
+							margin: 0px 7px 10px 0;
+							border: 1px solid #a3a3a3;
+							@include border-radius(5px);
+							&:hover {
+								@include box-shadow(0px 0px 30px rgba(178, 178, 178, 0.4) inset,1px 1px 7px grey);
+							}
+							.event-box-img {
+								position: relative;
+								z-index: 2;
+								img {
+									width: 263px;
+									height: 230px;
+									@include border-top-radius(5px);
+								}
+								.favorite-botton-content {
+									width: 263px;
+									//height: 230px;
+									position: absolute;
+									background: #ccc;
+									opacity: .5;
+									z-index: 3;
+									display: none;
+								}
+								.favorite-btn {
+									position: absolute;
+									z-index: 4;
+									display: inline-block;
+									color: #fff;
+									border: 2px solid #fff;
+									width: 30px;
+									height: 28px;
+									margin: 10px;
+									text-align: center;
+									top: 0;
+									right: 0;
+									display: none;
+									@include border-radius(50%);
+									&:hover, &.active {
+										background: #5f7b94;
+										border: 2px solid #5f7b94;
+									}
+								}
+							}
+							.event-text {
+								width: 100%;
+								overflow: hidden;
+								.event-box-title {
+									width: 100%;
+									text-align: center;
+									font-size: 14px;
+									margin: 15px auto 10px;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+								}
+								.event-panel {
+									width: 100%;
+									overflow: hidden;
+									color: #7E7E7E;
+									.user-nickname {
+										float: left;
+										line-height: 30px;
+										a {
+											display: inline-block;
+											font-size: 13px;
+											color: #7E7E7E;
+											padding: 0 10px;
+											img {
+												width: 30px;
+												height: 30px;
+												@include border-radius(50%);
+												margin-right: 10px;
+												float: left;
+											}
+											&:hover {
+												color: #626262;
+											}
+										}
+									}
+									.event-points-content {
+										float: right;
+										font-size: 13px;
+										margin-right: 10px;
+										margin-top: 3px;
+										.event-collect-points, .event-click-points {
+											display: inline-block;
+										}
+									}
+								}
+
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+		//行程內容頁
+		.trip-content-title {			
+			.title {
+				font-size: 25px;
+				text-align: center;
+				font-weight: normal;
+				line-height: 1.5em;
+				margin: 0;
+				padding-top: 20px;
+			}
+		}
+		.trip-content-date {
+			text-align: center;
+			font-size: 13px;
+		}
+		.trip-content-edit {
+			text-align: center;
+			font-size: 14px;
+			margin: 10px;
+			.privacy-text {
+				font-size: 12px;				
+			}
+			a {
+				color: $link-color;
+				padding-left: 10px;
+				&:hover {
+					color: #272727;
+				}
+			}
+		}
+		.bannerShow {
+			@include box-shadow(none);
+			img {
+				@include border-radius(5px);
+			}
+		}
+		.trip-left-container, .trip-right-container {
+			.trip-container {
+				margin-bottom: 20px;
+				.title-text	{
+					font-weight: bold;
+					border-bottom: 1px solid #9f9e9e;
+					padding-bottom: 7px;
+					margin-bottom: 7px;
+				}
+				.trip-info {
+					font-size: 14px;
+					.info-text {
+						width: 95%;
+						line-height: 2em;
+						.info-sub-text {
+							display: block;
+							width: 85px;
+							margin: 10px 10px 0px 0;
+						}
+						a {
+							color: $link-color;
+							&:hover {
+								text-decoration: underline;
+								color: #272727;
+							}
+						}
+					}
+					.loading-map {
+						margin: 20px 0;
+						img {
+							width: 100%;
+						}
+					}
+					.trip-radar {
+						margin: 20px 0;
+						text-align: center;
+					}
+					.shareinfo-btn {
+						margin: 15px 0;
+						font-weight: bold;
+						a {
+							display: inline-block;
+							font-size: 25px;
+							margin: 0 5px;
+							vertical-align: middle;
+							.fa-facebook-square {
+								color: #4864b4;
+							}
+							.fa-google-plus-square {
+								color: #dd4b38;
+							}
+							.fa-twitter-square {
+								color: #5298d6;
+							}
+							&:hover {
+								opacity: .7;
+							}
+						}
+					}
+					.ordercar-btn {
+						@extend .oobtn-ib;
+						padding: 10px 0;
+						letter-spacing: 3px;
+						font-size: 19px;
+						width: 100%;
+						text-align: center;
+						margin: 10px 0;
+						&:hover {
+							@extend .oobtn-hover;
+						}						
+					}
+					.favorite-btn {
+						border: 1px solid $link-color;
+						padding: 3px 10px;
+						color: $link-color;
+						@include border-radius(5px);
+						&:hover, &.active {
+							color: #fff;
+							background: $link-color;
+						}
+					}
+					.favourites-info {
+						.sub-text {
+							font-size: 16px;
+						}
+					}
+					.social-like-buttons {
+						overflow: hidden;
+						width: 100%;
+						margin: 10px 0;
+					}
+					.user-nickname {
+						display: inline-block;
+						margin: 10px 0;
+						line-height: 50px;
+						img {
+							width: 50px;
+							height: 50px;
+							@include border-radius(50%);
+							border: 2px solid $link-color;
+							margin-right: 10px;
+							float: left;
+						}
+						color: #272727;
+						font-size: 18px;
+						&:hover {
+							color: $link-color;
+						}
+					}					
+				}
+			}
+		}
+
+	}	
+}
+
+
+//footer
+.footer {
+	width: 100%;
+	background: #272727;
+	position: relative;
+	margin-top: 15px;
+	.copyright {
+		color: #BABABA;
+		//margin: 10px;
+		display: inline-block;
+	}
+	.community-button {
+		padding: 0px 10px;
+		margin: 0;
+		li {
+			float: left;
+			a {
+				display: inline-block;
+				background: #BABABA;
+				color: #272727;
+				@include border-radius(50%);
+				text-align: center;
+				&:hover {
+					background: #D9D9D9;
+				}
+			}
+
+		}
+	}
+}
+
+
+// login and forgetpassword 彈出視窗
+.login-title {
+	width: 100%;
+	height: 50px;
+	background: #272727;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	@include border-top-radius(5px);
+}
+.login-content {
+	background: #e9e9e9;
+	overflow: hidden;
+	@include border-bottom-radius(5px);
+	.login-fb-btn {
+		display: block;
+		width: 240px;
+		height: 40px;
+		background: #3a87cc;
+		text-align: center;
+		line-height: 40px;
+		color: #fff;
+		margin: 25px auto;
+		font-size: 14px;
+		@include border-radius(5px);
+		.fa-facebook {
+			margin-right: 10px;
+			font-size: 16px;
+		}
+		&:hover {
+			background: #6AA5D9;
+		}
+	}
+	.emaillogintip-text {
+		color: #787878;
+		text-align: center;
+		margin: 0 auto 25px;
+		width: 240px;
+		font-size: 14px;
+		span {
+			display: inline-block;
+			padding: 0 20px;
+			background: #e9e9e9;
+		}
+	}
+	.border-center {
+		&:after {
+			background: #9f9e9e;
+			content: "";
+			display: block;
+			height: 1px;
+			margin-top: -12px;
+		}
+	}	
+	.login-form {
+		width: 240px;
+		height: auto;
+		margin: 0 auto;
+		text-align: center;
+		input {
+			@extend .ooinput;
+		}
+		textarea {
+			@extend .ooinput;
+			resize: none;
+		}
+		.sendlogin-btn {
+			@extend .oobtn-ib;
+			padding: 10px 50px;
+			margin-top: 10px;
+			&:hover {
+				@extend	.oobtn-hover;
+			}
+		}
+	}
+
+}
+
+
+// 按鈕浮動效果 
+.float {
+  display: inline-block;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.float:hover, .float:focus, .float:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}

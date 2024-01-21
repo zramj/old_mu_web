@@ -1,0 +1,75 @@
+// 設定滿版背景隨著視窗縮放背景範圍*/
+@mixin background-size($cover) {
+  -webkit-background-size: $cover;
+  -moz-background-size: $cover;
+  -o-background-size: $cover;
+  background-size: $cover;
+}
+
+
+// 設定RWD模式*/
+//
+// 自訂一個mixin, 快速依照版面顯示不同的 style
+// 
+// @type string    mobile | pad | desktop
+//
+//-------- Mixin 開始 ----------
+ 
+    //方便撰寫的自訂 mixin 斷點樣式
+    @mixin _break($screen: mobile)
+    {
+        $map  :  map-get($break_layout, $screen);
+        $break:  map-get($map, "break");
+        $layout: map-get($map, "layout");
+
+        @include susy-breakpoint($break, $layout)
+        {
+            @content;
+        }
+    }
+//-------- Mixin 結束 ----------
+
+
+
+// 設定navToggle-button*/
+$dark: #212121;
+$light: #efefef;
+$color: #b3e5fc;
+
+@mixin navToggle($left, $top) {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  top: $top;
+  left: $left;
+  transition-duration: 0.5s;
+}
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 20px;
+  background-color: $dark;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $dark;
+  content: "";
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $dark;
+  content: "";
+  top: $top;
+}

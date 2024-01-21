@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OOBike</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="stylesheets/bootstrap.css">
+<link rel="stylesheet" href="stylesheets/bootstrap-datetimepicker.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+</head>
+<body>
+	<nav id="navMenu">
+		<ul>
+			<li><a href="about.html">關於我們</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="order.html">租借單車</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="trip.html">行程推薦</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="service.html">服務介紹</a></li>
+			<div class="special-nav-line"></div>
+			<li><a href="contact.html">聯絡我們</a></li>
+		</ul>
+	</nav>
+	<header class="header other-header">
+		<div class="navToggle-button">
+	      <div class="navToggle">
+	        <div class="icon"></div>
+	      </div>
+		</div>
+
+		<div class="logo"><a href="index.html" class="logo-img"></a></div>
+		<div class="function-area">
+			<div class="dropdown user-menu">
+			  <div id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  class="user-page-btn">
+			    <img src="images/user-img.png" alt=""><span  class="mobile-close">Yin In</span>&nbsp;<i class="fa fa-caret-down"></i>
+			  </div>
+			  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+			    <ul>
+			    	<li class="mobile-open">Yin in</li>
+			    	<li><a href="order_list.html">預定管理</a></li>
+			    	<li><a href="my_trip.html">我的行程</a></li>
+			    	<li><a href="account_info.html">帳號資料</a></li>
+			    	<li><a href="sign_out">登出</a></li>
+			    </ul>
+			  </ul>
+			</div>
+		</div>
+	</header>
+    <div class="main-wrap main-gray-wrap">
+    	<div class="datainput-content">
+			<div class="datainput-title"><h1 class="title-text">我的預定明細</h1></div>
+			<div class="datainput-form">
+				<form>
+					<div class="orderbikes-infowrap">
+						<div class="orderbikes-title">車款資料</div>
+						<ul class="orderbikes-info">
+							<li class="orderbikes-info-list">
+								<div class="orderbikes-img">
+									<img src="images/car1.jpg" alt="">
+								</div>
+								<div class="orderbikes-data-content">
+									<div class="bike-name">
+										<span class="sub-text">Trinity Composite 1</span>
+									</div>
+									<div class="bike-info">
+										<span class="sub-text">22</span>&nbsp;/&nbsp;
+										<span class="sub-text">碳纖</span>&nbsp;/&nbsp;
+										<span class="sub-text">L</span>&nbsp;/&nbsp;
+										<span class="sub-text">170&nbsp;cm</span>
+									</div>
+									<div class="bike-count">
+										<span class="count-text">&nbsp;1&nbsp;台</span>
+										<span class="count-text daycount">&nbsp;1&nbsp;天</span>
+									</div>
+									<div class="bike-price price-info">
+										<div class="unit-price">NT.&nbsp;1200&nbsp;(天)</div>
+										<div class="price-subTotal">小計&nbsp;:&nbsp;<span class="note">NT.&nbsp;1200</span></div>
+									</div>									
+								</div>							
+							</li>
+							<li class="orderbikes-info-list">
+								<div class="orderbikes-img">
+									<img src="images/car1.jpg" alt="">
+								</div>
+								<div class="orderbikes-data-content">
+									<div class="bike-name">
+										<span class="sub-text">Trinity Composite 1</span>
+									</div>
+									<div class="bike-info">
+										<span class="sub-text">22</span>&nbsp;/&nbsp;
+										<span class="sub-text">碳纖</span>&nbsp;/&nbsp;
+										<span class="sub-text">L</span>&nbsp;/&nbsp;
+										<span class="sub-text">170&nbsp;cm</span>
+									</div>
+									<div class="bike-count">
+										<span class="count-text">&nbsp;1&nbsp;台</span>
+										<span class="count-text daycount">&nbsp;1&nbsp;天</span>
+									</div>
+									<div class="bike-price price-info">
+										<div class="unit-price">NT.&nbsp;1200&nbsp;(天)</div>
+										<div class="price-subTotal">小計&nbsp;:&nbsp;<span class="note">NT.&nbsp;1200</span></div>
+									</div>									
+								</div>							
+							</li>														
+						</ul>
+						<div class="orderbikes-totalPrice">
+							<!--<div class="price-subTotal">
+								小計&nbsp;:&nbsp;<span class="note">NT.&nbsp;1200</span>
+							</div>-->
+							<div class="price-totalPrice">
+								總計&nbsp;:&nbsp;<span class="note">NT.&nbsp;2400</span>
+							</div> 							
+						</div>
+					</div>
+					<div class="orderbikes-infowrap">
+						<div class="orderbikes-title">訂單資料</div>
+						<div class="order-data-content">
+							<span class="sub-title-text">訂單資訊</span>
+							<ul>
+								<li>訂購時間：&nbsp;&nbsp;<span>2015-01-01 15:10:10</span></li>
+								<li>訂單編號：&nbsp;&nbsp;<span>B00000120150101</span></li>
+								<li>訂單狀態：&nbsp;&nbsp;
+									<span class="orderstatus-text ready">處理中</span>
+									<span class="orderstatus-text success">已成立</span>
+									<span class="orderstatus-text cancel">已取消</span>	
+								</li>
+								<button type="button" class="cancel-order-btn" data-toggle="modal" data-target=".cancelOrder-page">取消訂單</button>
+								<br><span class="note">(如果訂單已取消才會出現取消原因跟取消時間,且取消訂單鈕會不見,張允看完刪掉這段字)</span>
+								<li>取消時間&nbsp;&nbsp;：&nbsp;&nbsp;
+									<span>2015-01-01 15:10:10</span>
+								</li>								
+								<li>取消原因&nbsp;&nbsp;：&nbsp;&nbsp;
+									<span>不要問你會怕</span>
+								</li>								
+							</ul>
+						</div>
+						<div class="order-data-content">
+							<span class="sub-title-text">租車資訊</span>
+							<ul>
+								<li>取車時間：&nbsp;&nbsp;<span>2015-01-01 15:10:10</span></li>
+								<li>取車地點：&nbsp;&nbsp;<span>台南市中華路一號</span></li>
+								<li>還車時間：&nbsp;&nbsp;<span>2015-01-01 15:10:10</span></li>
+								<li>還車地點：&nbsp;&nbsp;<span>台南市中華路一號</span></li>				
+							</ul>
+						</div>
+						<div class="order-data-content">
+							<span class="sub-title-text">聯絡人資訊</span>
+							<ul>
+								<li>聯絡人名字：&nbsp;&nbsp;<span>Yi Yin</span></li>
+								<li>聯絡人電話：&nbsp;&nbsp;<span>0987654321</span></li>
+								<li>聯絡人信箱：&nbsp;&nbsp;<span>mumu@sokoos.com</span></li>
+							</ul>
+						</div>											
+					</div>
+					<div class="orderbikes-infowrap">
+						<div class="orderbikes-title">付款資料</div>
+						<div class="order-data-content">
+							<span class="sub-title-text">付款人資訊</span>
+							<ul>
+								<li>付款人名字：&nbsp;&nbsp;<span>Yi Yin</span></li>
+								<li>付款人電話：&nbsp;&nbsp;<span>0987654321</span></li>
+								<li>付款人信箱：&nbsp;&nbsp;<span>mumu@sokoos.com</span></li>
+								<li>付款狀態&nbsp;&nbsp;：&nbsp;&nbsp;
+									<span class="orderstatus-text ready">未付款</span>
+									<span class="orderstatus-text success">已付款</span>
+									<span class="orderstatus-text cancel">已取消</span>
+								</li>
+
+							</ul>
+						</div>
+						<div class="order-data-content">
+							<span class="sub-title-text">備註</span>
+							<ul>
+								<li>這是備註這是備註這是備註！這是備註這是備註這是備註！這是備註這是備註這是備註！這是備註這是備註這是備註！這是備註這是備註這是備註！這是備註這是備註這是備註！這是備註這是備註這是備註！</li>							
+							</ul>
+						</div>								
+					</div>					
+					<div class="orderbikes-button">
+						<span class="note">(這個鈕連結到paypal,如果訂單"已取消"或"已付款"這個鈕會不見,張允看完刪掉這段字)</span>
+						<a href="" class="next-btn">立即付款</a>
+						<br>
+						<a href="order_list.html" class=""><i class="fa fa-long-arrow-left"></i>&nbsp;回預訂管理列表</a>
+					</div>
+				</form>
+			</div>
+
+    	</div>
+    	<footer class="footer">
+    		<span class="copyright">Copyright © 2014 OOBIKE All rights reserved</span>
+    		<ul class="community-button">
+    			<li><a href=""><i class="fa fa-facebook"></i></a></li>
+    			<li><a href=""><i class="fa fa-twitter"></i></a></li>
+    			<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+    		</ul>
+    	</footer>
+    </div>
+
+<!--取消訂單視窗 start-->
+<div class="modal fade cancelOrder-page" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="login-title">取消訂單</div>
+      <div class="login-content">
+      	<div class="tip-content tip-content-1">
+      		<span>您好，請輸入您欲取消的原因</span>
+      	</div>
+      	<div class="login-form">
+	       	<form>
+	       		<textarea name="" id="" cols="10" rows="5" placeholder="請輸入取消原因" class="sub-text-input" required="required"></textarea>
+	      		<input type="submit" value="確定取消" class="sendlogin-btn">
+	      	</form>     		
+      	</div>      	
+      </div>
+    </div>
+  </div>
+</div>
+<!--取消訂單視窗 end-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>  
+<script type="text/javascript" src="js/style.js"></script>    
+</body>
+</html>
